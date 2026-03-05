@@ -50,6 +50,7 @@
 body {
     font-family: var(--font-display);
     color: #ffffff;
+    background-color: var(--color-surface);
 }
 /* esconde scrollbar no chrome, safari e edge */
 .scrollar-hide::-webkit-scrollbar{
