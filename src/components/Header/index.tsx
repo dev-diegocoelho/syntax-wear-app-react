@@ -1,8 +1,8 @@
 import Logo from '@/assets/images/Logo.svg';
 import IconUser from '@/assets/images/user.svg';
 import IconAbout from '@/assets/images/about.svg';
-import IconBag from '@/assets/images/bag.svg';
 import { Link } from '@tanstack/react-router';
+import { ShoppingCart } from '../ShoppingCart';
 
 
 
@@ -25,7 +25,9 @@ export const Header = () => {
                             <li className='hidden md:block'><a href="#">Sobre</a></li>
                             <li><Link to="/sign-in"><img src={IconUser} alt="Logo de Usuário" /></Link></li>
                             <li><a href="#"><img src={IconAbout} alt="Logo Sobre" /></a></li>
-                            <li><a href="#"><img src={IconBag} alt="Logo de Compra" /></a></li>
+                            <li> {/* <a href="#"><img src={IconBag} alt="Logo de Compra" /></a> */}
+                                <ShoppingCart />
+                            </li>
                         </ul>
                     </nav>
                 </div>
