@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { products } from '../../../mocks/products'
 import { formatCurrency } from '../../../utils/formatCurrency'
+import { CartContext } from "../../../contexts/CartContext";
+import { useContext } from "react";
 
 export const Route = createFileRoute('/_app/products/$productId')({
     component: RouteComponent,
@@ -8,9 +10,11 @@ export const Route = createFileRoute('/_app/products/$productId')({
 
 function RouteComponent() {
 
+    const { addToCart } = useContext(CartContext)
     const { productId } = Route.useParams()
 
-    const filteredProduct = products.find(product => product.id === Number(productId))
+    const filteredProduct = products.find(product => product.id === Number(productId));
+    if (!filteredProduct) return;
 
     const originalPrice = filteredProduct?.price ?? 0;
     const discountPrice = originalPrice * 0.9; // Aplicando um desconto de 10%
@@ -46,15 +50,13 @@ function RouteComponent() {
                 <div className='mb-3'>
                     <p className='text-sm'>Calcular o prazo de entrega</p>
                     <form className='flex gap-3'>
-                        <input type="text" placeholder="Insira seu CEP" className='border border-[#c0c0c0] rounded-md p-3'/>
+                        <input type="text" placeholder="Insira seu CEP" className='border border-[#c0c0c0] rounded-md p-3' />
                         <button className='bg-black text-white py-3 px-6 rounded-md cursor-pointer hover:bg-gray-800'>
                             Calcular
                         </button>
                     </form>
                 </div>
-                <button className='bg-black text-white p-5 w-full rounded-md cursor-pointer hover:bg-gray-800'>
-                    Adicionar ao Carrinho
-                </button>
+                <button className="bg-black text-white rounded-md p-5 w-full cursor-pointer hover:bg-gray-800" onClick={() => addToCart(filteredProduct)}>Adicionar ao carrinho</button>
             </div>
         </div>
     </section>
