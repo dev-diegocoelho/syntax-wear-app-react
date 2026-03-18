@@ -10,9 +10,11 @@ import galeriaTenisCinza from "@/assets/images/tenis-esportivo.jpg";
 import styles from "./Galery.module.css";
 import { Overlay } from "../Overlay";
 import { Button } from "../Button";
+import { useRouter } from '@tanstack/react-router'
 
 // Componente principal da galeria
 export const Galery = () => {
+  const router = useRouter();
   return (
     // Container principal da galeria
     <div className="container">
@@ -29,8 +31,8 @@ export const Galery = () => {
             title="Krypton One"
             subtitle="Estilo urbano com atitude"
             className="inset-0 justify-center">
-            <Button variant='secondary'>Feminino</Button>
-            <Button variant='secondary'>Masculino</Button>
+            <Button variant='secondary'  onClick={() => router.navigate({ to : "/products/category/$category", params: {category: "feminino"},})}>Feminino</Button>
+            <Button variant='secondary'  onClick={() => router.navigate({ to : "/products/category/$category", params: {category: "masculino"},})}>Masculino</Button>
           </Overlay>
         </div>
         {/* Sneaker Purple - Tênis Roxo (galeria-tenis-roxo.jpg) */}
