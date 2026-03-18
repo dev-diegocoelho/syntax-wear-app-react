@@ -36,9 +36,9 @@ export const Header = () => {
                             <li className='hidden lg:block'><Link to='/our-stores'>Nossas Lojas</Link></li>
                             <li className='hidden lg:block'><Link to='/about'>Sobre</Link></li>
                             <li className='lg:hidden'><MenuMobile  navLinks={navLinks}/></li>
-                            <li className='hidden lg:block'><Link to="/sign-in"><img src={IconUser} alt="Logo de Usuário" /></Link></li>
-                            <li className='hidden md:block'><a href="#"><img src={IconAbout} alt="Logo Sobre" /></a></li>
-                            <li> {/* <a href="#"><img src={IconBag} alt="Logo de Compra" /></a> */}
+                            <li className='hidden lg:block'><Link to="/sign-in"><img src={IconUser} alt="Ícone de Usuário" /></Link></li>
+                            <li className='hidden md:block'><Link to='/about'><img src={IconAbout} alt="Ícone Sobre" /></Link></li>
+                            <li>
                                 <ShoppingCart />
                             </li>
                         </ul>
