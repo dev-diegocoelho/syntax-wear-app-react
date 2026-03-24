@@ -8,7 +8,7 @@ export const Button = ({children, variant = 'primary', size = 'md', onClick}:But
     const buttonStyles = {
         base: 'flex justify-center items-center gap-2 text-nowrap leading-none hover:cursor-pointer transition-colors duration-200 fonte-medium rounded-full transition py-2.5',
         variant: {
-            primary:"bg-white text-[#6329a2] hover:bg-gray-100",
+            primary:"bg-white text-primary hover:bg-gray-100",
             secondary:"bg-transparent border boder-white text-white hover:bg-white hover:text-black",
         },
         size:{

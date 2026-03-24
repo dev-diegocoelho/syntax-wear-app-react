@@ -56,9 +56,9 @@ export const CEPForm = () => {
         <>
             <form className='flex gap-3' onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className="flex flex-col flex-1">
-                    <input type="text" placeholder="Insira seu CEP" className='border border-[#c0c0c0] rounded-md p-3 ${errors.cep ? "border-red-500" : ""}' {...register('cep')} />
+                    <input type="text" placeholder="Insira seu CEP" className='border border-border rounded-md p-3 ${errors.cep ? "border-error" : ""}' {...register('cep')} />
                     {errors.cep && (
-                        <span className='text-red-600 text-sm mt-1'>{String(errors.cep.message)}</span>
+                        <span className='text-error text-sm mt-1'>{String(errors.cep.message)}</span>
                     )}
                 </div>
                 <button type="submit" className='bg-black text-white py-3 px-6 rounded-md cursor-pointer hover:bg-gray-800 disabled:opacity-60' disabled={isSubmitting}>
@@ -67,7 +67,7 @@ export const CEPForm = () => {
             </form>
             {addressError &&(
                 <div className="mt-4">
-                    <p className="text-red-500 text-sm">{addressError}</p>
+                    <p className="text-error text-sm">{addressError}</p>
                 </div>
             )}
             {address && (

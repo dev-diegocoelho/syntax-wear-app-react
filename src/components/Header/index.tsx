@@ -1,6 +1,5 @@
 import Logo from '@/assets/images/Logo.svg';
 import IconUser from '@/assets/images/user.svg';
-import IconAbout from '@/assets/images/about.svg';
 import { Link } from '@tanstack/react-router';
 import { ShoppingCart } from '../ShoppingCart';
 import { MenuMobile } from '../MenuMobile';
@@ -35,9 +34,9 @@ export const Header = () => {
                         <ul className='flex gap-4 md:gap-10 items-center'>
                             <li className='hidden lg:block'><Link to='/our-stores'>Nossas Lojas</Link></li>
                             <li className='hidden lg:block'><Link to='/about'>Sobre</Link></li>
-                            <li className='lg:hidden'><MenuMobile  navLinks={navLinks}/></li>
+                            <li className='lg:hidden'><MenuMobile navLinks={navLinks} /></li>
                             <li className='hidden lg:block'><Link to="/sign-in"><img src={IconUser} alt="Ícone de Usuário" /></Link></li>
-                            <li className='hidden md:block'><Link to='/about'><img src={IconAbout} alt="Ícone Sobre" /></Link></li>
+
                             <li>
                                 <ShoppingCart />
                             </li>
