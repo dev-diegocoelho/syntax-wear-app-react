@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Syntax Wear App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de e-commerce de vestuário e calçados desenvolvido como parte do curso DevQuest.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto foi construído utilizando as seguintes tecnologias:
 
-## React Compiler
+-   **React** (v19)
+-   **Vite** como bundler e servidor de desenvolvimento
+-   **TypeScript** para tipagem estática
+-   **Tailwind CSS** para estilização
+-   **TanStack Router** para gerenciamento de rotas
+-   **React Hook Form** e **Zod** para criação e validação de formulários
+-   **ESLint** para linting de código
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ▶️ Como Rodar o Projeto
 
-## Expanding the ESLint configuration
+Para executar este projeto localmente, siga os passos abaixo:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Clone o repositório:**
+    ```bash
+    git clone <url-do-seu-repositorio>
+    cd syntax-wear-app
+    ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2.  **Instale as dependências:**
+    Certifique-se de ter o Node.js instalado. Em seguida, instale as dependências do projeto com seu gerenciador de pacotes preferido:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+    ```bash
+    npm install
+    ```
+    ou
+    ```bash
+    yarn install
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  **Inicie o servidor de desenvolvimento:**
+    Execute o comando abaixo para iniciar o servidor Vite:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    ```bash
+    npm run dev
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4.  **Acesse a aplicação:**
+    Abra seu navegador e acesse [http://localhost:5173](http://localhost:5173) (ou a porta que for indicada no seu terminal).
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📜 Scripts Disponíveis
+
+-   `npm run dev`: Inicia o servidor de desenvolvimento.
+-   `npm run build`: Compila o projeto para produção.
+-   `npm run lint`: Executa o linter para análise do código.
+-   `npm run preview`: Inicia um servidor local para visualizar a build de produção.
